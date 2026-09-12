@@ -1,0 +1,19 @@
+
+/* P201 is a provisional GXBB launcher baseline, not an identified board. */
+/ {
+    model = "Mini M8S SD test (provisional GXBB P201 baseline)";
+    aliases {
+        mmc0 = &sd_emmc_b;
+    };
+};
+
+/* Keep internal storage and unverified peripherals out of this test. */
+&sd_emmc_c { status = "disabled"; };
+&sd_emmc_a { status = "disabled"; };
+&ethmac { status = "disabled"; };
+
+/* Conservative SD timing until the actual board is verified. */
+&sd_emmc_b {
+    max-frequency = <25000000>;
+    no-1-8-v;
+};
