@@ -12,11 +12,11 @@ See [hardware status](docs/hardware.md) for the exact scope and limitations.
 
 ## Use from another flake
 
-After publication, replace `OWNER` with the repository owner:
+Add the board-support flake to your configuration:
 
 ```nix
 {
-  inputs.mini-m8s.url = "github:OWNER/nixos-mini-m8s";
+  inputs.mini-m8s.url = "github:Staphylococcus/nixos-mini-m8s";
   inputs.nixpkgs.follows = "mini-m8s/nixpkgs";
 
   outputs = { nixpkgs, mini-m8s, ... }: {
